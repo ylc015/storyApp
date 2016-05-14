@@ -1,7 +1,5 @@
 // Karma configuration
-// http://karma-runner.github.io/0.12/config/configuration-file.html
-// Generated on 2015-01-19 using
-// generator-karma 0.8.3
+// Generated on 2016-05-12
 
 module.exports = function(config) {
   'use strict';
@@ -14,20 +12,23 @@ module.exports = function(config) {
     basePath: '../',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    // as well as any additional frameworks (requirejs/chai/sinon/...)
+    frameworks: [
+      'jasmine'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-route/angular-route.js',
+      // bower:js
+      // endbower
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
-    exclude: [],
+    exclude: [
+    ],
 
     // web server port
     port: 8080,

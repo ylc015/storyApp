@@ -47,6 +47,31 @@ angular
         templateUrl: 'views/movie-delete.html',
         controller: 'MovieDeleteCtrl'
       })
+      .when('/stories', {
+        templateUrl: 'views/stories.html',
+        controller: 'StoriesCtrl',
+        //controllerAs: 'stories'
+      })
+      .when('/create/story', {
+        templateUrl: 'views/story-add.html',
+        controller: 'StoryAddCtrl',
+        controllerAs: 'storyAdd'
+      })
+      .when('/story/:id', {
+        templateUrl: 'views/story-view.html',
+        controller: 'StoryViewCtrl',
+        controllerAs: 'storyView'
+      })
+      .when('/story/:id/delete', {
+        templateUrl: 'views/story-delete.html',
+        controller: 'StoryDeleteCtrl',
+        controllerAs: 'storyDelete'
+      })
+      .when('/story/:id/edit', {
+        templateUrl: 'views/story-edit.html',
+        controller: 'StoryEditCtrl',
+        controllerAs: 'storyEdit'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -60,6 +85,9 @@ angular
   })
   .factory('Movie', function(MovieRestangular) {
     return MovieRestangular.service('movie');
+  })
+  .factory('Story', function(MovieRestangular) {
+    return MovieRestangular.service('story');
   })
   .directive('youtube', function() {
     return {
